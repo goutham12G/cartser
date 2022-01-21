@@ -48,7 +48,6 @@ spec:
         container('dotnet') {
           sh """
             ln -s `pwd`
-            .NET test
           """
         }
       }
