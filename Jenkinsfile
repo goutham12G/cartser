@@ -43,7 +43,7 @@ spec:
 }
   }
   stages {
-    stage('Test') {
+    stage('build') {
       steps {
         container('dotnet') {
           sh """
