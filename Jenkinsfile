@@ -48,6 +48,7 @@ spec:
         container('c#') {
           sh """
             ln -s `pwd`
+            mvn clean install
             
           """
         }
