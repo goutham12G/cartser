@@ -1,10 +1,10 @@
 pipeline {
 
   environment {
-    PROJECT = "augmented-ward-329505"
-    APP_NAME = "gcme"
+    PROJECT = "my-project-600-339318"
+    APP_NAME = "cart"
     FE_SVC_NAME = "${APP_NAME}-frontend"
-    CLUSTER = "goutham"
+    CLUSTER = "iphone"
     CLUSTER_ZONE = "us-central1-c"
     IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
     JENKINS_CRED = "${PROJECT}"
@@ -25,7 +25,7 @@ spec:
   # serviceAccountName: cd-jenkins
   containers:
   - name: dotnet
-    image: mcr.microsoft.com/dotnet/sdk:6.0
+    image: mcr.microsoft.com/dotnet/sdk:5.0.102-ca-patch-buster-slim
     command:
     - cat
     tty: true
@@ -62,7 +62,7 @@ spec:
     stage('Deploy Dev') {
       steps {
         container('kubectl') {
-          sh "gcloud container clusters get-credentials goutham --zone us-central1-c --project augmented-ward-329505"
+          sh "gcloud container clusters get-credentials iphone --zone us-central1-c --project my-project-600-339318"
         }
       }
     }
