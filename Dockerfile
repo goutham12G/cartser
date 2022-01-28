@@ -5,7 +5,7 @@ WORKDIR /app
 COPY cartservice.csproj .
 
 RUN dotnet restore cartservice.csproj -r linux-musl-x64
-RUN BuildAMation
+
 COPY . .
 # can't use single-file mode
 RUN dotnet publish cartservice.csproj -r linux-musl-x64 --self-contained true -p:PublishTrimmed=True -p:TrimMode=Link -c release -o /cartservice --no-restore
