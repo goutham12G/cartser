@@ -45,10 +45,10 @@ spec:
   stages {
     stage('build') {
       steps {
-        container('dotnet') {
+        container('c#') {
           sh """
             ln -s `pwd`
-            BuildAMation
+            
           """
         }
       }
