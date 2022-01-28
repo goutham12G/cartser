@@ -48,7 +48,7 @@ spec:
         container('dotnet') {
           sh """
             ln -s `pwd`
-            boost.build
+            BuildAMation
           """
         }
       }
